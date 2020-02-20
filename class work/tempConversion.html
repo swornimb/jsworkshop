@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Temperature conversion.</title>
+    </head>
+    <body>
+        <script>
+            let decision = prompt("Which system do you want to enter temperature in, Celsius(C) or Farhenheit(F)?");
+            lowerDecision = decision.toLowerCase();
+            if(lowerDecision != "c" && lowerDecision != "f"){
+                alert("Invalid input.");
+            }
+            let temperature = prompt("Enter temperature to be converted in your desired system:");
+
+            tempConvert(lowerDecision,temperature);
+
+            function tempConvert(deci,temp){
+                let convertedTemp;
+                if(deci == "f"){
+                    convertedTemp = 5*(temp-32)/9;
+                    alert(`${temp}°F in celsius is ${convertedTemp}°C.`);
+                }else if(deci == "c"){
+                    convertedTemp = (9*temp/5)+32;
+                    alert(`${temp}°C in farhenheit is ${convertedTemp}°F`);
+                }
+            }
+        </script>
+    </body>
+</html>

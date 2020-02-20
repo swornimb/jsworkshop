@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Age Calculator</title>
+    </head>
+    <body>
+        <script>
+            let birthDay = prompt("Enter the date of your birth:");
+            let birthMonth = prompt("Enter your birth month:");
+            let birthYear = prompt("Enter your birth year");
+
+            ageCalc(birthDay,birthMonth,birthYear);
+
+            function ageCalc(bD,bM,bY){
+                var currentDate = new Date(),
+                day = currentDate.getDate(),
+                month = currentDate.getMonth() + 1,
+                year = currentDate.getFullYear();
+
+                let days;
+                
+                let diffYear;
+                let diffMonth;
+                let diffDate;
+
+                if(bM > month){
+                    diffYear = year - bY - 1;
+                    if(day >= bD){
+                        diffMonth = (12 - bM) + month;
+                        diffDate = day - bD;
+                    }else{
+                        diffMonth = (12 - bM) + month - 1;
+                        if(diffMonth == 1){
+                            bM = 12;
+                        }else{
+                            bM = month - 1;
+                        }
+                        if(bM == 1){
+                            days = 31;
+                        }else if(bM == 2){
+                            days = 28;
+                        }else if(bM == 3){
+                            days = 31;
+                        }else if(bM == 4){
+                            days = 30;
+                        }else if(bM == 5){
+                            days = 31;
+                        }else if(bM == 6){
+                            days = 30;
+                        }else if(bM == 7){
+                            days = 31;
+                        }else if(bM == 8){
+                            days = 31;
+                        }else if(bM == 9){
+                            days = 30;
+                        }else if(bM == 10){
+                            days = 31;
+                        }else if(bM == 11){
+                            days = 30;
+                        }else if(bM == 12){
+                            days = 31;
+                        }
+                        diffDate = Math.abs(days - bD) + day; 
+                    }
+                }else{
+                    diffYear = year - bY;
+                    if(day >= bD){
+                        diffMonth = month - bM;
+                        diffDate = day - bD;
+                    }else{
+                        diffMonth = month - bM;
+                        if(diffMonth == 1){
+                            bM = 12;
+                        }else{
+                            bM = diffMonth - 1;
+                        }
+                        if(bM == 1){
+                            days = 31;
+                        }else if(bM == 2){
+                            days = 28;
+                        }else if(bM == 3){
+                            days = 31;
+                        }else if(bM == 4){
+                            days = 30;
+                        }else if(bM == 5){
+                            days = 31;
+                        }else if(bM == 6){
+                            days = 30;
+                        }else if(bM == 7){
+                            days = 31;
+                        }else if(bM == 8){
+                            days = 3;
+                        }else if(bM == 9){
+                            days = 30;
+                        }else if(bM == 10){
+                            days = 31;
+                        }else if(bM == 11){
+                            days = 30;
+                        }else if(bM == 12){
+                            days = 31;
+                        }
+                        diffDate = Math.abs(days - bD) + day; 
+                    }
+                }
+                
+                alert(`You are ${diffYear} year/s ${diffMonth} month/s and ${diffDate} day/s old`);
+            }
+        </script>
+    </body>
+</html>

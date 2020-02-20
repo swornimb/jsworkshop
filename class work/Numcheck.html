@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Number checking.</title>
+    </head>
+    <body>
+        <script>
+            let num1 = prompt("Enter a number:");
+            let num2 = prompt("Enter another number:");
+            checkNum(num1,num2);
+
+            function checkNum(n1,n2){
+                let sum = Number(n1) + Number(n2);
+                alert(sum);
+                if(n1 ==50 || n2 == 50 || +n1 + +n2 ==50){
+                    alert("True");
+                }else{
+                    alert("False");
+                }
+            }
+        </script>
+    </body>
+</html>

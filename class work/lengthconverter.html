@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Length converter</title>
+        </title>
+    </head>
+    <body>
+        <script>
+            let decision = prompt("Which system do you want to enter length in (km) or (m) or (mm)?:");
+            let length = prompt("Enter the length in your desired system :");
+
+            if(decision == "km" || decision == "Km" || decision == "KM" || decision == "kM"){
+                fromKm(length);
+            }else if(decision == "m" || decision == "M"){
+                fromM(length);
+            }else{
+                fromMm(length);
+            }
+
+            function fromKm(l){
+                let m = l*1000;
+                let mm = l*1000000;
+
+                alert(`${l}km in meter is ${m}m and in milimeter is ${mm}mm.`);
+            }
+
+            function fromM(l){
+                let km = l/1000;
+                let mm = l*1000;
+
+                alert(`${l}m in kilometer is ${km}km and in milimeter is ${mm}mm.`);
+            }
+
+            function fromMm(l){
+                let m = l/1000;
+                let km = l/1000000;
+
+                alert(`${l}mm in meter is ${m}m and in kilometer is ${km}km.`);
+            }
+
+        </script>
+    </body>
+</html>

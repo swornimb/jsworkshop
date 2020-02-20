@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Largest number.</title>
+    </head>
+    <body>
+        <script>
+            let num1 = prompt("Enter 1st number:");
+            let num2 = prompt("Enter 2nd number:");
+            let num3 = prompt("Enter 3rd number:");
+
+            // let max = Math.max(num1,num2,num3);
+            // alert(`The largest number is ${max}`);
+
+            largest(num1,num2,num3);
+
+            function largest(n1,n2,n3){
+                if(parseFloat(n1) > parseFloat(n2) && parseFloat(n1) > parseFloat(n3)){
+                    alert(`The largest number is ${n1}`);
+                }else if(parseFloat(n2) > parseFloat(n1) && parseFloat(n2) > parseFloat(n3)){
+                    alert(`The largest number is ${n2}`);
+                }else{
+                    alert(`The largest number is ${n3}`);
+                }
+            }
+        </script>
+    </body>
+</html>
