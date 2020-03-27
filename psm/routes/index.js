@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
   checkuser.exec((err,data)=>{
     if(err) throw err;
     var getpassword = data.password;
-    if(password===getpassword){
+    if(password==getpassword){
       res.redirect('/manager');
     }
     else{
@@ -37,6 +37,7 @@ function checkEmail(req,res,next){
     next();
   })
 }
+
 function checkUsername(req,res,next){
   var username= req.body.username;
   var check=userModel.findOne({username:username});
