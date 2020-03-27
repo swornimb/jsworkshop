@@ -100,4 +100,18 @@ router.post('/manager', function(req, res, next) {
   
 });
 
+router.get('/manager/delete/:id', function(req, res, next) {
+  
+  var getid = req.params.id;
+  var deletepassword=passModel.findByIdAndDelete(getid);
+  deletepassword.exec((err)=>{
+    if(err) throw err;
+    res.redirect('/manager');
+  })
+  
+ 
+});
+
+
+
 module.exports = router;
