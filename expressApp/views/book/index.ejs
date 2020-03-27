@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><%= title %></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+              </ul>
+            </div>
+          </nav>
+                    <!--List of all books-->
+                    <div class="container">
+                        <h2>Basic Table</h2>
+                        <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Book Name</th>
+                              <th>Book Author</th>
+                              <th>Pages</th>
+                              <th>action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <% bookList.forEach(function(book){ %>
+                            <tr>
+                              <td><%=book.name %></td>
+                              <td><%=book.author %></td>
+                              <td><%=book.pages %></td>
+                              <td><button class="btn btn-danger" type="button" >Delete</button></td>
+                            </tr> 
+                            <% }); %>                           
+                          </tbody>
+                        </table>
+                      </div>
+                      <!--List of all books-->
+          <h2 class="text-center">Book Inventory</h2>
+          <div class="col-md-5"></div>
+          <div class="container col-md-3">
+            <form method = "post" action="/api/v1/book">
+                <div class="form-group">
+                  <label for="email">Book Name</label>
+                  <input type="text" class="form-control" id="email" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Pages</label>
+                    <input type="text" class="form-control" id="email" name="pags">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Author</label>
+                    <input type="text" class="form-control" id="email" name="author">
+                  </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+          </div>
+
+
+          <!--Add Books-->
+        <script src="" async defer></script>
+
+    </body>
+</html>
