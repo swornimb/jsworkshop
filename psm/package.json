@@ -10,9 +10,12 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.6",
     "morgan": "~1.9.1",
+    "node-localstorage": "^2.1.5",
     "nodeman": "^1.1.2",
     "nodemon": "^2.0.2"
   }
